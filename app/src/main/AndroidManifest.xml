@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="C-Squared Teledermatology"
-        android:roundIcon="@mipmap/logo_round"
+        android:icon="@mipmap/custom_icon"
+        android:label="BC^2"
+        android:roundIcon="@mipmap/custom_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AboutUs"></activity>
