@@ -43,6 +43,7 @@
         android:text="Log in"
         android:textColor="@android:color/white"
         android:textSize="18sp"
+        android:onClick="onClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
