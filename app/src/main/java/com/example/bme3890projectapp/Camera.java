@@ -8,9 +8,11 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -61,6 +63,20 @@ public class Camera extends AppCompatActivity implements SensorEventListener {
         LineGraphSeries<DataPoint> fluxSeries = new LineGraphSeries<>(fluxPoint);
         fluxChart.addSeries(fluxSeries);
         fluxSeries.setColor(Color.MAGENTA);
+
+        if (lux <= 10.0) {
+            Toast.makeText(getApplicationContext(), "Not enough light. Try again!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "Adequate light level achieved.", Toast.LENGTH_LONG).show();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    Intent i=new Intent(Camera.this,TakePhoto.class);
+                    startActivity(i);
+                }
+            }, 2000);
+        }
 
 
     }
